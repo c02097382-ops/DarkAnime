@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DarkAnime - Galeria</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #080810;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background: #151520;
+    padding: 35px;
+    text-align: center;
+    border-bottom: 2px solid #963cff;
+}
+
+header h1 {
+    font-size: 40px;
+    color: #b76aff;
+}
+
+header p {
+    color: #bbb;
+    margin-top: 12px;
+}
+
+nav {
+    padding: 20px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 15px;
+}
+
+nav a:hover {
+    color: #b76aff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 25px;
+}
+
+h2 {
+    color: #b76aff;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    background: #191923;
+    color: white;
+    border: 1px solid #963cff;
+    margin-bottom: 25px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #191923;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #333;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #963cff;
+}
+
+.card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.card h3 {
+    padding: 15px;
+}
+
+footer {
+    background: #151520;
+    padding: 30px;
+    text-align: center;
+    color: #aaa;
+    margin-top: 50px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🌑 DarkAnime</h1>
+    <p>Seu universo anime começa aqui!</p>
+</header>
+
+<nav>
+    <a href="#">Início</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#sobre">Sobre</a>
+</nav>
+
+<div class="container" id="galeria">
+
+<h2>🔥 Galeria de imagens</h2>
+
+<input type="text"
+id="pesquisa"
+placeholder="🔍 Pesquisar imagens..."
+onkeyup="buscar()">
+
+<div class="gallery">
+
+<div class="card">
+<img src="https://placehold.co/400x500/191923/b76aff?text=Anime+01">
+<h3>Anime 01</h3>
+</div>
+
+<div class="card">
+<img src="https://placehold.co/400x500/191923/b76aff?text=Anime+02">
+<h3>Anime 02</h3>
+</div>
+
+<div class="card">
+<img src="https://placehold.co/400x500/191923/b76aff?text=Anime+03">
+<h3>Anime 03</h3>
+</div>
+
+<div class="card">
+<img src="https://placehold.co/400x500/191923/b76aff?text=Anime+04">
+<h3>Anime 04</h3>
+</div>
+
+</div>
+</div>
+
+<div class="container" id="sobre">
+<h2>Sobre DarkAnime</h2>
+<p>
+DarkAnime é um espaço dedicado ao universo dos animes,
+wallpapers, personagens e artes.
+</p>
+</div>
+
+<footer>
+© 2026 DarkAnime - Todos os direitos reservados.
+</footer>
+
+<script>
+function buscar() {
+    let texto = document.getElementById("pesquisa").value.toLowerCase();
+
+    document.querySelectorAll(".card").forEach(card => {
+        card.style.display = card.innerText.toLowerCase().includes(texto)
+        ? "block" : "none";
+    });
+}
+</script>
+
+</body>
+</html>
